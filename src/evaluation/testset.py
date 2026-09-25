@@ -37,7 +37,7 @@ def _ground_truth(question_type: str, row: pd.Series) -> str:
     if question_type == "date":
         return str(row["published"])
     if question_type == "categories":
-        return str(row["categories_joined"])
+        return str(row["categories_joined"] or row["primary_category"])
     return first_sentence(str(row["summary"]))
 
 

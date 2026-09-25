@@ -1,8 +1,8 @@
 # Danh Sách Thành Viên & Phân Công Công Việc
 
-- Tên Nhóm: `[Điền tên nhóm]`
+- Tên Nhóm: `MultiPerson`
 - Mã Nhóm / Lớp: `K4-L3-DAY10`
-- Tên Repository Nộp Bài: `K4-L3-DAY10-TenNhom-DataPipeline`
+- Tên Repository Nộp Bài: `K4-L3A-Day10-MultiPerson-DataPipeline`
 - Ngày cập nhật phân công: `[Điền ngày]`
 
 > Mỗi người sở hữu một phần deliverable chính, có input/output và cách xác minh rõ ràng. Các phần liên quan vẫn được review chéo trước khi tích hợp. Phần việc dưới đây là phạm vi được giao; chỉ đánh dấu hoàn thành sau khi có code và artifact thực tế.
@@ -13,11 +13,11 @@
 
 | STT | Họ và tên        | MSSV          | Email          | Vai trò chính                               | Báo cáo cá nhân                          |
 | --: | ---------------- | ------------- | -------------- | ------------------------------------------- | ---------------------------------------- |
-|   1 | Nguyễn Hồ Nam    | `2A202602788` | `[Điền email]` | Trưởng nhóm & Pipeline Integration/Evidence | `report/2A202602788_Nguyen_Ho_Nam.md`    |
-|   2 | Nguyễn Văn Chiến | `2A202602926` | `[Điền email]` | Raw Ingestion & Data Lineage                | `report/2A202602926_Nguyen_Van_Chien.md` |
-|   3 | Vũ Văn Hà        | `2A202602589` | `[Điền email]` | Data Modeling & Vector Index                | `report/2A202602589_Vu_Van_Ha.md`        |
-|   4 | Nguyễn Cảnh Duy  | `2A202602815` | `[Điền email]` | Data Observability & Evaluation             | `report/2A202602815_Nguyen_Canh_Duy.md`  |
-|   5 | Nguyễn Trọng Huy | `2A202602379` | `[Điền email]` | Corruption, RAG Agent & Repair              | `report/2A202602379_Nguyen_Trong_Huy.md` |
+|   1 | Nguyễn Hồ Nam    | `2A202602788` | `nghoofnam@gmail.com`    | Trưởng nhóm & Pipeline Integration/Evidence | `report/2A202602788_Nguyen_Ho_Nam.md`    |
+|   2 | Nguyễn Văn Chiến | `2A202602926` | `nvchien1904@gmail.com`  | Raw Ingestion & Data Lineage                | `report/2A202602926_Nguyen_Van_Chien.md` |
+|   3 | Vũ Văn Hà        | `2A202602589` | `vuhahhmt207@gmail.com`  | Data Modeling & Vector Index                | `report/2A202602589_Vu_Van_Ha.md`        |
+|   4 | Nguyễn Cảnh Duy  | `2A202602815` | `canhduy68kx@gmail.com`  | Data Observability & Evaluation             | `report/2A202602815_Nguyen_Canh_Duy.md`  |
+|   5 | Nguyễn Trọng Huy | `2A202602379` | `mrbeohuy@gmail.com`     | Corruption, RAG Agent & Repair              | `report/2A202602379_Nguyen_Trong_Huy.md` |
 
 ---
 

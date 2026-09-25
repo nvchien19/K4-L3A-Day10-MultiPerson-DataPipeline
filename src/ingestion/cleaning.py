@@ -104,12 +104,15 @@ def build_clean_dataframe(records: list[PaperRecord], run_date: datetime) -> pd.
     df["categories_joined"] = df["categories"].map(lambda values: compact_join(values))
     df["summary_chars"] = df["summary"].map(len)
     df["text_for_embedding"] = df.apply(
-        lambda row: (
-            f"Title: {row['title']}\n"
-            f"Authors: {row['authors_joined']}\n"
-            f"Published: {row['published']}\n"
-            f"Categories: {row['categories_joined']}\n"
-            f"Summary: {row['summary']}"
+        lambda row: "\n".join(
+            line.rstrip()
+            for line in (
+                f"Title: {row['title']}",
+                f"Authors: {row['authors_joined']}",
+                f"Published: {row['published']}",
+                f"Categories: {row['categories_joined']}",
+                f"Summary: {row['summary']}",
+            )
         ),
         axis=1,
     )

@@ -27,12 +27,15 @@ def _refresh_derived_fields(corrupted: pd.DataFrame) -> pd.DataFrame:
     )
     refreshed["summary_chars"] = refreshed["summary"].map(lambda value: len(str(value)))
     refreshed["text_for_embedding"] = refreshed.apply(
-        lambda row: (
-            f"Title: {row['title']}\n"
-            f"Authors: {row['authors_joined']}\n"
-            f"Published: {row['published']}\n"
-            f"Categories: {row['categories_joined']}\n"
-            f"Summary: {row['summary']}"
+        lambda row: "\n".join(
+            line.rstrip()
+            for line in (
+                f"Title: {row['title']}",
+                f"Authors: {row['authors_joined']}",
+                f"Published: {row['published']}",
+                f"Categories: {row['categories_joined']}",
+                f"Summary: {row['summary']}",
+            )
         ),
         axis=1,
     )
