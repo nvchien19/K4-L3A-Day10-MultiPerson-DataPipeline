@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import pandas as pd
 
 from core.config import load_settings
@@ -26,6 +24,7 @@ def main() -> None:
         clean_df = pd.read_json(settings.paths.clean_json)
     else:
         clean_df = build_clean_dataframe(load_raw_records(settings.paths.raw_records_json), run_date)
+    
     if not settings.paths.eval_testset.exists():
         build_test_set(clean_df, settings.paths.eval_testset)
 
@@ -65,7 +64,7 @@ def main() -> None:
     )
     repaired_quality = run_data_quality_checks(repaired_df, settings, "repaired")
     repaired_freshness = build_freshness_report(
-        repaired_df, settings, settings.paths.freshness_report
+        repaired_df, settings, settings.paths.repaired_freshness_report
     )
 
     generate_corruption_report(
@@ -93,3 +92,4 @@ def main() -> None:
         f"Corrupted quality success={corrupted_quality['success']}; "
         f"repaired quality success={repaired_quality['success']}"
     )
+    print(f"Corruption flow hoàn tất: corrupted={len(corrupted_df)}, repaired={len(repaired_df)}")
