@@ -1,92 +1,92 @@
 [
   {
-    "id": "q-01",
+    "id": "eval_001",
     "question_type": "summary",
-    "question": "What is the main contribution described in 'JADE-Plus: A Multimodal Agentic Retrieval-Augmented Generation Large Language Framework for Diagnostic Support in Jawbone Lesions: Development and Technical Validation Study'?",
-    "ground_truth": "Abstract Diagnosing jawbone lesions in oral and maxillofacial radiology remains challenging due to overlapping radiological features and the need for integrated clinical reasoning. This study aimed to develop and validate JADE-Plus, a novel multimodal, agent-controlled retrieval-augmented generation (RAG) framework for diagnostic decision support in jawbone lesion assessment. JADE-Plus was implemented as a cloud-based, tablet-optimized system integrating a vision-language model (VLM) for panoramic radiograph analysis, a knowledge-grounded RAG module, and an agentic verification loop for diagnostic fusion and re-ranking. The system was evaluated using 40 representative jawbone lesion cases and compared with JADE, GPT-5.4, GPT-5.4 VLM, and ORAD. Performance was assessed using Top-1 and Top-3 accuracy, ablation and statistical analyses, intra-model stability, and response time. JADE-Plus achieved the highest diagnostic performance, with a Top-1 accuracy of 90% (36/40; 95% CI 76\u201397%) and a Top-3 accuracy of 100%, with no missed diagnoses. Cochran\u2019s Q test demonstrated significant differences among models for both Top-3 correctness ( Q = 25.66, p Q = 27.55, p",
+    "question": "What is the summary of the paper 'DOLPHIN: A Privacy-Preserving Digital Investigation Readiness Assessment Framework based on Offline Large Language Models and Retrieval-Augmented Generation'?",
+    "ground_truth": "Abstract Increasingly, digital forensic investigations require a quick, reliable, and privacy-preserving assessment of case materials before formal forensic examination.",
     "ground_truth_doc_ids": [
-      "10.1007/s10278-026-02086-9"
+      "10.21203/rs.3.rs-10489777/v1"
     ]
   },
   {
-    "id": "q-02",
-    "question_type": "summary",
-    "question": "What is the main contribution described in '0346 Retrieval Augmented Generation Improves Large Language Model Performance in Sleep Medicine'?",
-    "ground_truth": "Abstract Introduction While Large Language Models (LLMs) offer generative capabilities, generic models often lack domain-specific grounding, leading to hallucinations in high-stakes contexts. However, LLMs can serve as clinical decision support tools if augmented with specific domain data. This study evaluates the utility of Retrieval-Augmented Generation (RAG) applied to open-source LLMs, utilizing a curated knowledge base of authoritative sleep medicine textbooks, to quantify improvement in performance. Methods We evaluated four open-source models\u2014Llama-70B, Llama-8B, Qwen-14B, and Qwen-235B, linked to a RAG system indexing five standard textbooks, including ICSD-3 TR. Models were tested on sleep board\u2013style MCQs and clinical vignettes diagnostic accuracy. Performance was assessed across nine configurations derived from three factors: RAG pipeline complexity (Plain vs. Complicated), textbook preprocessing (Uncleaned vs. Cleaned/TOC-aligned), and retriever type (Dense-only vs. Hybrid). Metrics included MCQ Accuracy and the rates at which the correct diagnosis appeared as the top result or within the top 5 differential diagnosis lists for vignettes. Results RAG consistently outperformed the no-RAG baseline, yielding absolute performance gains of 5.6%\u201310.7% for MCQs and 8.1%\u201310.2% for the top diagnosis in cases across all models. For MCQs, Qwen-235B achieved the highest accuracy of 87.3% (vs. 81.7% baseline) using the Plain RAG configuration with Cleaned (TOC-aligned) Hybrid retrieval. Llama-70B followed with 83.6% in the same configuration. For case vignettes, Qwen-235B achieved a correct top diagnosis rate of 66.3% and a correct diagnosis rate within the top 5 differential diagnosis lists of 90.8% using Cleaned Hybrid retrieval configurations. Hybrid retrieval (Dense + Sparse) consistently surpassed Dense-only methods. Notably, while larger models benefited from Cleaned text, smaller models (e.g., Qwen-14B) achieved higher top diagnosis rates with Uncleaned text (57.1% vs. 51.0%), suggesting a dependency on redundant context in lower-parameter settings. Conclusion RAG significantly enhances knowledge performance of open-source LLMs in sleep medicine. Hybrid retrieval and curated, TOC-aligned knowledge bases yield optimal results for large models, whereas smaller models benefit from the redundancy of uncleaned text. These findings suggest that RAG systems can augment LLMs in domain specific knowledge for clinical decision support. Support (if any)",
-    "ground_truth_doc_ids": [
-      "10.1093/sleep/zsag091.0346"
-    ]
-  },
-  {
-    "id": "q-03",
-    "question_type": "summary",
-    "question": "What is the main contribution described in 'Retrieval-Augmented Large Language Model Agents for Automated Scientific Literature Review Generation'?",
-    "ground_truth": "This study investigates a method that integrates retrieval-augmented mechanisms into large language model agents for scientific literature review generation. The approach addresses the limitations of traditional review models that rely on parametric knowledge with insufficient timeliness and limited coverage. Incorporating external document retrieval and dynamic information fusion into the generation process enhances the accuracy and completeness of the output. The overall framework consists of query encoding, semantic retrieval, document filtering, knowledge fusion, language modeling, task planning, memory storage, and reinforcement optimization, forming a closed loop of retrieval, understanding, and generation. Relevant document fragments are first retrieved through semantic vector search to ensure comprehensive and reliable information sources. These external representations are then integrated with the internal embeddings of the language model through weighted fusion, which preserves fluency while maintaining factual grounding. The task planning module constrains logical flow and text structure, and reinforcement learning optimization further improves relevance and consistency. Comparative experiments on large-scale scientific literature datasets demonstrate that the method outperforms existing approaches on ROUGE, BLEU, METEOR, and diversity metrics, validating its effectiveness and practicality. The findings show that combining retrieval augmentation with agent architectures can significantly improve coverage, accuracy, and language quality in review generation, providing a feasible solution for knowledge organization in complex literature environments.",
-    "ground_truth_doc_ids": [
-      "10.20944/preprints202604.0339.v1"
-    ]
-  },
-  {
-    "id": "q-04",
+    "id": "eval_002",
     "question_type": "authors",
-    "question": "Who authored '0346 Retrieval Augmented Generation Improves Large Language Model Performance in Sleep Medicine'?",
-    "ground_truth": "Joseph Cheung, Pengze Li, Anshum Patel, SaiKrishna Vallamchetla, Het Contractor, Hayden Heninger, Cui Tao",
+    "question": "Who authored the paper 'Retrieval-Augmented Generation for Large Language Model-Based Intelligent Assistants: A Review'?",
+    "ground_truth": "Zilang Shao",
     "ground_truth_doc_ids": [
-      "10.1093/sleep/zsag091.0346"
+      "10.70267/aitia.2026482489"
     ]
   },
   {
-    "id": "q-05",
-    "question_type": "authors",
-    "question": "Who authored 'Retrieval-Augmented Large Language Model Agents for Automated Scientific Literature Review Generation'?",
-    "ground_truth": "Ruotong Wang, Nyutian Long, Shunqi Liu, Yuxi Wang, Zhen Qi, Huajun Zhang",
-    "ground_truth_doc_ids": [
-      "10.20944/preprints202604.0339.v1"
-    ]
-  },
-  {
-    "id": "q-06",
-    "question_type": "authors",
-    "question": "Who authored 'An Agentic Retrieval-Augmented Vision-Language Recommendation System for Hyperdimensional Encoding Optimization'?",
-    "ground_truth": "Fardin Jalil Piran, Rajiv Malhotra, Farhad Imani",
-    "ground_truth_doc_ids": [
-      "10.20944/preprints202608.1849.v1"
-    ]
-  },
-  {
-    "id": "q-07",
+    "id": "eval_003",
     "question_type": "date",
-    "question": "When was 'Retrieval-Augmented Large Language Model Agents for Automated Scientific Literature Review Generation' published?",
-    "ground_truth": "2026-04-06",
+    "question": "When was the paper 'Agentic Retrieval-Augmented Generation for Verifiable Regulatory Compliance in Urban Cyber-Physical Systems' published?",
+    "ground_truth": "2026-09-12",
     "ground_truth_doc_ids": [
-      "10.20944/preprints202604.0339.v1"
+      "10.21203/rs.3.rs-10349437/v1"
     ]
   },
   {
-    "id": "q-08",
-    "question_type": "date",
-    "question": "When was 'An Agentic Retrieval-Augmented Vision-Language Recommendation System for Hyperdimensional Encoding Optimization' published?",
-    "ground_truth": "2026-08-26",
-    "ground_truth_doc_ids": [
-      "10.20944/preprints202608.1849.v1"
-    ]
-  },
-  {
-    "id": "q-09",
-    "question_type": "date",
-    "question": "When was 'Microsoft Azure artificial intelligence / machine learning hackathon for development of retrieval-augmented generation large language model' published?",
-    "ground_truth": "2026-07-01",
-    "ground_truth_doc_ids": [
-      "10.21079/11681/50309"
-    ]
-  },
-  {
-    "id": "q-10",
+    "id": "eval_004",
     "question_type": "categories",
-    "question": "What categories are assigned to 'An Agentic Retrieval-Augmented Vision-Language Recommendation System for Hyperdimensional Encoding Optimization'?",
-    "ground_truth": "",
+    "question": "What categories does the paper 'Intelligent automation of economic processes based on retrieval-augmented generation and large language models' belong to?",
+    "ground_truth": "Uncategorized",
     "ground_truth_doc_ids": [
-      "10.20944/preprints202608.1849.v1"
+      "10.36887/2415-8453-2026-3-2"
+    ]
+  },
+  {
+    "id": "eval_005",
+    "question_type": "summary",
+    "question": "What is the summary of the paper 'Transformasi Layanan Informasi Berbasis Chatbot Retrieval-Augmented Generation dan Large Language Model'?",
+    "ground_truth": "Keterbukaan akses informasi publik diatur dalam Undang-Undang Nomor 14 Tahun 2008 tentang Keterbukaan Informasi Publik sebagai elemen utama untuk mewujudkan transparansi dan tata kelola pemerintahan yang baik.",
+    "ground_truth_doc_ids": [
+      "10.28932/jutisi.v12i2.13099"
+    ]
+  },
+  {
+    "id": "eval_006",
+    "question_type": "summary",
+    "question": "What is the summary of the paper 'Integrating Retrieval-Augmented Generation with Large Language Model for Robust and Explainable AI Text Detection'?",
+    "ground_truth": "Large Language Models (LLMs) have been rapidly evolving lately, resulting in the need for strong, explainable models to detect the difference between human-generated and machine-generated articles.",
+    "ground_truth_doc_ids": [
+      "10.3390/knowledge6030022"
+    ]
+  },
+  {
+    "id": "eval_007",
+    "question_type": "date",
+    "question": "When was the paper 'Does retrieval-augmented generation impact medical students\u2019 perceptions of large language models?' published?",
+    "ground_truth": "2026-07-03",
+    "ground_truth_doc_ids": [
+      "10.2196/preprints.106157"
+    ]
+  },
+  {
+    "id": "eval_008",
+    "question_type": "date",
+    "question": "When was the paper 'An Agentic AI System for Roof Design Compliance Using Computer Vision, Retrieval-Augmented Generation and Large Language Models' published?",
+    "ground_truth": "2026-07-02",
+    "ground_truth_doc_ids": [
+      "10.3390/buildings16132637"
+    ]
+  },
+  {
+    "id": "eval_009",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Chatbot Hybrid Fatwa MUI Menggunakan Retrieval Augmented Generation dan Large Language Model'?",
+    "ground_truth": "Surya Hidayatullah Firdaus, Nazruddin Safaat H, Yelfi Vitriani, Novriyanto",
+    "ground_truth_doc_ids": [
+      "10.52060/juptik.v4i1.4318"
+    ]
+  },
+  {
+    "id": "eval_010",
+    "question_type": "categories",
+    "question": "What categories does the paper 'Retrieval-Augmented Large Language Model Agents for Automated Scientific Literature Review Generation' belong to?",
+    "ground_truth": "Uncategorized",
+    "ground_truth_doc_ids": [
+      "10.20944/preprints202604.0339.v1"
     ]
   }
 ]

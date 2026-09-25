@@ -1,43 +1,75 @@
-{
-  "scenarios": [
-    {
-      "type": "missing_recent_records",
-      "records": [
-        "10.63646/kpqm1958",
-        "10.70267/aitia.2026482489"
-      ]
-    },
-    {
-      "type": "blank_summary",
-      "paper_ids": [
-        "10.1093/sleep/zsag091.0346"
-      ]
-    },
-    {
-      "type": "inject_noise",
-      "paper_ids": [
-        "10.20944/preprints202604.0339.v1"
-      ]
-    },
-    {
-      "type": "truncate_title",
-      "paper_ids": [
-        "10.20944/preprints202608.1849.v1"
-      ]
-    },
-    {
-      "type": "stale_date",
-      "paper_ids": [
-        "10.1007/s10278-026-02086-9"
-      ]
-    },
-    {
-      "type": "duplicate_rows",
-      "paper_ids": [
-        "10.1007/s10278-026-02086-9-duplicate"
-      ]
-    }
-  ],
-  "rows_before": 24,
-  "rows_after": 23
-}
+[
+  {
+    "corruption": "drop_latest_records",
+    "description": "Removed the newest records to simulate missing fresh data.",
+    "paper_ids": [
+      "10.21203/rs.3.rs-10489777/v1",
+      "10.70267/aitia.2026482489",
+      "10.21203/rs.3.rs-10349437/v1",
+      "10.54254/2755-2721/2026.36624",
+      "10.36887/2415-8453-2026-3-2"
+    ],
+    "rows_before": 22,
+    "rows_after": 17
+  },
+  {
+    "corruption": "blank_summary",
+    "description": "Cleared summaries to simulate empty crawl/extraction results.",
+    "paper_ids": [
+      "10.28932/jutisi.v12i2.13099",
+      "10.20944/preprints202608.1849.v1"
+    ],
+    "rows_affected": 2
+  },
+  {
+    "corruption": "inject_noise",
+    "description": "Inserted deterministic noise markers into summaries.",
+    "paper_ids": [
+      "10.3390/knowledge6030022",
+      "10.36948/ijfmr.2026.v08i04.85777"
+    ],
+    "rows_affected": 2
+  },
+  {
+    "corruption": "truncate_title",
+    "description": "Cut titles below eight characters to simulate malformed metadata.",
+    "paper_ids": [
+      "10.1007/s10278-026-02086-9",
+      "10.21203/rs.3.rs-10178277/v1"
+    ],
+    "rows_affected": 2,
+    "max_title_chars": 5
+  },
+  {
+    "corruption": "stale_date",
+    "description": "Moved publication dates one year into the past to simulate stale data.",
+    "paper_ids": [
+      "10.2196/preprints.106157",
+      "10.3390/buildings16132637",
+      "10.63646/kpqm1958"
+    ],
+    "rows_affected": 3,
+    "shift_days": 365,
+    "stale_dates": [
+      "2025-07-03",
+      "2025-07-02",
+      "2025-06-30"
+    ]
+  },
+  {
+    "corruption": "duplicate_rows",
+    "description": "Appended exact duplicate rows to simulate repeated ingestion.",
+    "paper_ids": [
+      "10.52060/juptik.v4i1.4318",
+      "10.55041/isjem07213"
+    ],
+    "rows_affected": 2
+  },
+  {
+    "corruption": "summary",
+    "description": "Completed all six controlled corruption scenarios.",
+    "total_rows_before": 22,
+    "total_rows_after": 19,
+    "scenario_count": 6
+  }
+]

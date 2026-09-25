@@ -1,23 +1,23 @@
 {
-  "report_name": "corrupted",
-  "success": false,
+  "report_name": "repaired",
+  "success": true,
   "checks": {
     "row_count": {
       "success": true,
-      "observed": 19,
+      "observed": 22,
       "expected": ">= 1"
     },
     "paper_id_not_null": {
       "success": true
     },
     "paper_id_unique": {
-      "success": false
+      "success": true
     },
     "title_not_null": {
       "success": true
     },
     "summary_length": {
-      "success": false
+      "success": true
     },
     "text_for_embedding_not_null": {
       "success": true

@@ -4,7 +4,7 @@
   "checks": {
     "row_count": {
       "success": true,
-      "observed": 24,
+      "observed": 22,
       "expected": ">= 1"
     },
     "paper_id_not_null": {
