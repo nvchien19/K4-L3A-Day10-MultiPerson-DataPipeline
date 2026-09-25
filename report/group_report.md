@@ -15,7 +15,7 @@
 
 | STT | Họ và tên | MSSV | Vai trò chính | Module/deliverable sở hữu |
 | --: | --- | --- | --- | --- |
-| 1 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
+| 1 | Nguyễn Cảnh Duy | 2A202602815 | Pipeline end-to-end (ingestion, cleaning, evaluation set, observability, corruption/repair, tích hợp) | `src/ingestion/{crossref,cleaning,corruption}.py`, `src/evaluation/testset.py`, `src/observability/{quality,reporting}.py`, `src/pipelines/{phase1,corruption_flow}.py`, provider DeepSeek (`src/core/config.py`, `src/retrieval/llm.py`); báo cáo cá nhân: [`2A202602815_NguyenCanhDuy.md`](2A202602815_NguyenCanhDuy.md) |
 | 2 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
 | 3 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
 | 4 | [Nếu có] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
@@ -58,13 +58,13 @@ Crossref API
 
 | Khối             | Input          | Xử lý chính             | Output/artifact          | Owner          |
 | ----------------- | -------------- | -------------------------- | ------------------------ | -------------- |
-| Ingestion         | [Nguồn/input] | [Fetch, retry, parse...]   | [Đường dẫn artifact] | [Thành viên] |
-| Cleaning          | [Input]        | [Các quy tắc chính]     | [Đường dẫn artifact] | [Thành viên] |
-| Embedding/index   | [Input]        | [Model/index config]       | [Đường dẫn artifact] | [Thành viên] |
-| Evaluation        | [Input]        | [Test set và metrics]     | [Đường dẫn artifact] | [Thành viên] |
-| Observability     | [Input]        | [Quality/freshness checks] | [Đường dẫn artifact] | [Thành viên] |
-| Corruption/repair | [Input]        | [Corruption và repair]    | [Đường dẫn artifact] | [Thành viên] |
-| Orchestration     | [Input]        | [Thứ tự chạy]           | [Reports/metrics]        | [Thành viên] |
+| Ingestion         | Crossref `/works` (live, `REFRESH_SOURCE=1`) hoặc snapshot `data/raw/crossref_response.json` | Retry 429/5xx với backoff + `Retry-After`, lưu nguyên văn response, fallback offline, parse DOI/title/abstract (bỏ JATS)/authors/subject/dates | `data/raw/crossref_records.json` (24 records) | Nguyễn Cảnh Duy |
+| Cleaning          | `crossref_records.json` + `run_date` | Chuẩn hóa text, parse ngày, `age_days`, dedupe theo `paper_id`, `text_for_embedding` 5 phần, sort ổn định | `data/clean/papers_clean.{csv,json}` (24 dòng) | Nguyễn Cảnh Duy |
+| Embedding/index   | Clean dataframe | `all-MiniLM-L6-v2` (vector chuẩn hóa) + ChromaDB cosine, xóa rồi tạo lại collection mỗi lần build | `data/chroma/` (`papers-baseline`/`-corrupted`/`-repaired`), `data/embeddings/*.json` | Nguyễn Cảnh Duy (tích hợp module có sẵn) |
+| Evaluation        | Clean dataframe, Chroma index | Test set 10 câu deterministic (4 dạng); hit rate, token F1, LLM judge DeepSeek `deepseek-chat` | `data/eval/test_set.json`, `data/results/*_metrics.json`, `*_answers.json` | Nguyễn Cảnh Duy |
+| Observability     | Dataframe từng trạng thái | GX 1.x ephemeral, 7 expectations (row count, not-null ×3, unique, độ dài summary/title); Freshness `age_days > 180`, SLA stale ≤ 25% | `data/quality/*_quality_report.json`, `*freshness_report.json` | Nguyễn Cảnh Duy |
+| Corruption/repair | Baseline clean data; raw records | 6 lỗi có seed 42 trên bản sao; repair bằng cách clean lại từ raw với cùng `run_date`, kiểm tra hash + idempotent | `data/results/corruption_log.json`, `data/clean/papers_clean_{corrupted,repaired}.*` | Nguyễn Cảnh Duy |
+| Orchestration     | Settings, `.env` | `phase1.py`: raw → clean → gate (fail thì dừng) → test set → index → evaluate → report → agent demo; `corruption_flow.py`: corrupt → gate/freshness → index + evaluate → repair → evaluate → report | `data/reports/phase1_report.md`, `data/reports/corruption_report.md` | Nguyễn Cảnh Duy |
 
 ## 4. Cách tái hiện kết quả
 
