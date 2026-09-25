@@ -1,0 +1,26 @@
+{
+  "report_name": "corrupted",
+  "success": true,
+  "checks": {
+    "row_count": {
+      "success": true,
+      "observed": 23,
+      "expected": ">= 1"
+    },
+    "paper_id_not_null": {
+      "success": true
+    },
+    "paper_id_unique": {
+      "success": true
+    },
+    "title_not_null": {
+      "success": true
+    },
+    "summary_length": {
+      "success": true
+    },
+    "text_for_embedding_not_null": {
+      "success": true
+    }
+  }
+}
