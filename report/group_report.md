@@ -19,7 +19,7 @@
 | 4 | Nguyễn Cảnh Duy | 2A202602815 | Data Observability & Evaluation | `src/observability/quality.py`, `src/evaluation/testset.py`, `src/evaluation/metrics.py`, `src/observability/reporting.py` |
 | 5 | Nguyễn Trọng Huy | 2A202602379 | Corruption, RAG Agent & Repair | `src/ingestion/corruption.py`, kiểm chứng QA/agent, dữ liệu corrupted/repaired |
 
-Báo cáo cá nhân đã tạo: `report/2A202602926_Nguyen_Van_Chien.md`. Các báo cáo cá nhân còn lại cần mỗi thành viên hoàn thành riêng.
+Báo cáo cá nhân đã tạo: `report/2A202602788_NguyenHoNam.md`, `report/2A202602926_Nguyen_Van_Chien.md`, `report/2A202602589_VuVanHa.md`, `report/2A202602815_NguyenCanhDuy.md`, `report/2A202602379_Nguyen_Trong_Huy.md`.
 
 ## 2. Tóm tắt kết quả
 
@@ -252,7 +252,7 @@ Hai kết luận có quan hệ nhân quả:
 | Judge chạy ở chế độ mock/fallback | Điểm judge có thể khác LLM production | Chạy lại với provider thật và so sánh metrics |
 | Crossref live thay đổi theo thời gian | Raw/clean có thể khác snapshot hiện tại | Ghim snapshot và ghi hash/thời điểm fetch |
 | Corrupted freshness vẫn Fresh | Tín hiệu stale chưa đủ mạnh trong demo | Tăng số stale rows hoặc hạ ngưỡng demo và đo lại |
-| Mới có báo cáo cá nhân của Chiến | Chưa đủ bằng chứng đóng góp từng người | Mỗi thành viên tạo báo cáo riêng theo mẫu |
+| Báo cáo cá nhân mới hoàn thiện gần thời điểm nộp | Cần rà lại để tránh mâu thuẫn số liệu giữa báo cáo nhóm và báo cáo từng người | Đối chiếu từng báo cáo cá nhân với artifact và metrics chung trước khi nộp |
 
 ## 13. Checklist trước khi nộp
 
@@ -263,6 +263,6 @@ Hai kết luận có quan hệ nhân quả:
 - [x] Bảng metrics khớp với các file trong `data/results/`.
 - [x] Quality/freshness conclusions khớp với `data/quality/`.
 - [x] Các đường dẫn báo cáo và artifact truy cập được.
-- [ ] Mỗi thành viên đã hoàn thành báo cáo vai trò riêng.
+- [x] Mỗi thành viên đã hoàn thành báo cáo vai trò riêng.
 - [x] Không có `.env`, API key, token hoặc secret trong source, report, log hay ảnh.
 
